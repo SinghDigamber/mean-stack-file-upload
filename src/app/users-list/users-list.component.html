@@ -1,0 +1,20 @@
+<div class="container user-table">
+  <!-- No data message -->
+  <div
+    class="alert alert-success text-center"
+    role="alert"
+    *ngIf="Users.length <= 0"
+  >
+    No Users added yet!
+  </div>
+
+  <ul class="list-unstyled">
+    <li class="media" *ngFor="let user of Users; let i = index">
+      <img [src]="user.avatar" class="mr-3" [alt]="user.name" />
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">{{ user.name }}</h5>
+        {{ user._id }}
+      </div>
+    </li>
+  </ul>
+</div>
